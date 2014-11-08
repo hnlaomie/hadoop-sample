@@ -1,0 +1,209 @@
+ext {
+    commonsBeanutilsVer = '1.9.2'
+    commonsLang3Ver = '3.3.2'
+    commonsLangVer = '2.6'
+    commonsDbcpVer = '1.4'
+    commonsPoolVer = '1.6'
+    commonsIoVer = '2.1'
+    commonsCodecVer = '1.9'
+    commonsDbutilsVer = '1.6'
+    commonsCollectionsVer = '3.2.1'
+
+    hadoopVer = '2.5.1'
+    sparkVer = '1.1'
+    hiveVer = '0.13.1'
+
+    hamcrestVer = '1.3'
+    junitVer = '4.11'
+    assertjVer = '1.7.0'
+    assertjGuavaVer = '1.3.0'
+
+    log4jVer = '1.2.17'
+    logbackVer = '1.1.2'
+    slf4jVer = '1.7.7'
+    jbossLoggingVer = '3.1.4.GA'
+
+    scala11Ver = '2.11.4'
+    scala10Ver = '2.10.4'
+    groovyVer = '2.3.7'
+
+    mysqlConnectorJavaVer = '5.1.34'
+    h2Ver = '1.4.182'
+    sqliteJdbcVer = '3.7.15-M1'
+    hsqldbVer = '2.3.2'
+    mapdbVer = '1.0.6'
+    c3p0Ver = '0.9.5-pre8'
+    druidVer = '1.0.9'
+
+    antlr4Ver = '4.4'
+    antlr3Ver = '3.5.2'
+    st4Ver = '4.0.8'
+
+    poiVer = '3.10-FINAL'
+    itextAsianVer = '5.2.0'
+    itextVer = '5.5.2'
+    opencsvVer = '2.3'
+
+    jodaTimeVer = '2.4'
+    guavaVer = '18.0'
+    guava14Ver = '14.0'
+    jacksonVer = '2.4.3'
+    aspectjVer = '1.8.2'
+
+    jspVer = '2.1'
+    javaxServletVer = '3.1.0'
+    servletVer = '2.5'
+    jstlVer = '1.2'
+    jettyVer = '9.2.3.v20140905'
+    httpclientVer = '4.3.6'
+    httpcoreVer = '4.3.3'
+    htmlunitVer = '2.15'
+    nutzVer = '1.b.51'
+
+    springDataVer = '1.7.0.RELEASE'
+    springBootJpaVer = '0.5.0.M2'
+    springBootVer = '1.2.0.M1'
+    springVer = '4.0.7.RELEASE'
+
+    hibernateVer = '4.2.14.Final'
+    hibernateValidatorVer = '5.1.2.Final'
+    hibernateJpaVer = '1.0.0.Final'
+    //trans
+    openjpaVer = '2.3.0'
+    mybatisVer = '3.2.8'
+
+    querydslVer = '3.4.3'
+
+    chardetVer = '1.0.3'
+    mchangeCommonsVer = '0.2.7'
+    shiroVer = '1.2.3'
+    cdiVer = '1.2'
+    cditestVer = '1.2.6'
+    dozerVer = '5.5.1'
+    seleniumVer = '2.43.1'
+    mockitoVer = '1.9.5'
+    powermockVer = '1.5.6'
+    jaxenVer = '1.1.6'
+
+    libraries = [
+        commonsIo: "commons-io:commons-io:${commonsIoVer}@jar",
+        commonsPool: "commons-pool:commons-pool:${commonsPoolVer}@jar",
+        commonsDbcp: "commons-dbcp:commons-dbcp:${commonsDbcpVer}@jar",
+        commonsLang: "commons-lang:commons-lang:${commonsLangVer}@jar",
+        commonsLang3: "org.apache.commons:commons-lang3:${commonsLang3Ver}@jar",
+        commonsCodec: "commons-codec:commons-codec:${commonsCodecVer}@jar",
+        commonsBeanutils: "commons-beanutils:commons-beanutils:${commonsBeanutilsVer}@jar",
+        commonsDbutils: "commons-dbutils:commons-dbutils:${commonsDbutilsVer}@jar",
+        commonsCollections: "commons-collections:commons-collections:${commonsCollectionsVer}@jar",
+
+        hadoopClient: "org.apache.hadoop:hadoop-client:${hadoopVer}",
+        hadoopMinicluster: "org.apache.hadoop:hadoop-minicluster:${hadoopVer}",
+        hadoopCommon: "org.apache.hadoop:hadoop-common:${hadoopVer}",
+        hadoopHdfs: "org.apache.hadoop:hadoop-hdfs:${hadoopVer}",
+        hadoopMapreduceClientCore: "org.apache.hadoop:hadoop-mapreduce-client-core:${hadoopVer}",
+        hadoopMapreduceClientJobclient: "org.apache.hadoop:hadoop-mapreduce-client-jobclient:${hadoopVer}",
+        hadoopMapreduce: "org.apache.hadoop:hadoop-mapreduce:${hadoopVer}",
+        hadoopMapreduceClientCommon: "org.apache.hadoop:hadoop-mapreduce-client-common:${hadoopVer}",
+
+        hamcrestCore: "org.hamcrest:hamcrest-core:${hamcrestVer}@jar",
+        junit: "junit:junit:${junitVer}@jar",
+        assertjCore: "org.assertj:assertj-core:${assertjVer}@jar",
+        assertjGuava: "org.assertj:assertj-guava:${assertjGuavaVer}@jar",
+        
+        log4j: "log4j:log4j:${log4jVer}@jar",
+        logbackClassic: "ch.qos.logback:logback-classic:${logbackVer}@jar",
+        logbackCore: "ch.qos.logback:logback-core:${logbackVer}@jar",
+        slf4jApi: "org.slf4j:slf4j-api:${slf4jVer}@jar",
+        jbossLogging: "org.jboss.logging:jboss-logging:${jbossLoggingVer}@jar",
+        jclOverSlf4j: "org.slf4j:jcl-over-slf4j:${slf4jVer}@jar",
+
+        scala11Library: "org.scala-lang:scala-library:${scala11Ver}@jar",
+        scala11Compiler: "org.scala-lang:scala-compiler:${scala11Ver}@jar",
+        scala11Reflect: "org.scala-lang:scala-reflect:${scala11Ver}@jar",
+        scala10Library: "org.scala-lang:scala-library:${scala10Ver}@jar",
+        scala10Compiler: "org.scala-lang:scala-compiler:${scala10Ver}@jar",
+        scala10Reflect: "org.scala-lang:scala-reflect:${scala10Ver}@jar",
+        groovyAll: "org.codehaus.groovy:groovy-all:${groovyVer}",
+
+        h2: "com.h2database:h2:${h2Ver}@jar",
+        hsqldb: "org.hsqldb:hsqldb:${hsqldbVer}@jar",
+        sqliteJdbc: "org.xerial:sqlite-jdbc:${sqliteJdbcVer}@jar",
+        mysqlConnectorJava: "mysql:mysql-connector-java:${mysqlConnectorJavaVer}@jar",
+        mapdb: "org.mapdb:mapdb:${mapdbVer}@jar",
+        druid: "com.alibaba:druid:${druidVer}@jar",
+        c3p0: "com.mchange:c3p0:${c3p0Ver}@jar",
+
+        st4: "org.antlr:ST4:${st4Ver}@jar",
+        antlr4Runtime: "com.tunnelvisionlabs:antlr4-runtime:${antlr4Ver}@jar",
+        antlr3Runtime: "org.antlr:antlr-runtime:${antlr3Ver}@jar",
+        antlr4: "com.tunnelvisionlabs:antlr4:${antlr4Ver}@jar",
+        antlr3: "org.antlr:antlr:${antlr3Ver}@jar",
+
+        poi: "org.apache.poi:poi:${poiVer}@jar",
+        itextAsian: "com.itextpdf:itext-asian:${itextAsianVer}@jar",
+        itextpdf: "com.itextpdf:itextpdf:${itextVer}@jar",
+        opencsv: "net.sf.opencsv:opencsv:${opencsvVer}@jar",
+
+        guava: "com.google.guava:guava:${guavaVer}@jar",
+        guava14: "com.google.guava:guava:${guava14Ver}@jar",
+        jodaTime: "joda-time:joda-time:${jodaTimeVer}@jar",
+        jacksonCore: "com.fasterxml.jackson.core:jackson-core:${jacksonVer}@jar",
+        jacksonDatabind: "com.fasterxml.jackson.core:jackson-databind:${jacksonVer}@jar",
+        jacksonAnnotations: "com.fasterxml.jackson.core:jackson-annotations:${jacksonVer}@jar",
+        jacksonModule: "com.fasterxml.jackson.module:jackson-module-jaxb-annotations:${jacksonVer}@jar",
+        aspectjRt: "org.aspectj:aspectjrt:${aspectjVer}@jar",
+        aspectjWeaver: "org.aspectj:aspectjweaver:${aspectjVer}@jar",
+
+        jspApi: "javax.servlet.jsp:jsp-api:${jspVer}@jar",
+        javaxservletApi: "javax.servlet:javax.servlet-api:${javaxServletVer}@jar",
+        servletApi: "javax.servlet:servlet-api:${servletVer}@jar",
+        jstl: "javax.servlet:jstl:${jstlVer}@jar",
+        jettyWebapp: "org.eclipse.jetty:jetty-webapp:${jettyVer}@jar",
+        httpclient: "org.apache.httpcomponents:httpclient:${httpclientVer}@jar",
+        httpcore: "org.apache.httpcomponents:httpcore:${httpcoreVer}@jar",
+        htmlunit: "net.sourceforge.htmlunit:htmlunit:${htmlunitVer}@jar",
+        nutz: "org.nutz:nutz:${nutzVer}@jar",
+
+        springDataCommons: "org.springframework.data:spring-data-commons:${springDataVer}@jar",
+        springDataJpa: "org.springframework.data:spring-data-jpa:${springDataVer}",
+        springBootJpa: "org.springframework.boot:spring-boot-starter-data-jpa:${springBootJpaVer}",
+        springBoot: "org.springframework.boot:spring-boot:${springBootVer}",
+        springBootTest: "org.springframework.boot:spring-boot-starter-test:${springBootVer}@jar",
+        springOrm: "org.springframework:spring-orm:${springVer}@jar",
+        springContext: "org.springframework:spring-context:${springVer}@jar",
+        springAop: "org.springframework:spring-aop:${springVer}@jar",
+        springTx: "org.springframework:spring-tx:${springVer}@jar",
+        springBeans: "org.springframework:spring-beans:${springVer}@jar",
+        springInstrument: "org.springframework:spring-instrument:${springVer}@jar",
+        springCore: "org.springframework:spring-core:${springVer}@jar",
+        springWebmvc: "org.springframework:spring-webmvc:${springVer}@jar",
+        springTest: "org.springframework:spring-test:${springVer}@jar",
+        springAspects: "org.springframework:spring-aspects:${springVer}@jar",
+
+        persistenceJpa: "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:${hibernateJpaVer}@jar",
+        openjpa: "org.apache.openjpa:openjpa-persistence:${openjpaVer}@jar",
+        hibernateEntitymanager: "org.hibernate:hibernate-entitymanager:${hibernateVer}@jar",
+        hibernateCore: "org.hibernate:hibernate-core:${hibernateVer}@jar",
+        hibernateValidator: "org.hibernate:hibernate-validator:${hibernateValidatorVer}@jar",
+        mybatis: "org.mybatis:mybatis:${mybatisVer}",
+
+        querydslCore: "com.mysema.querydsl:querydsl-core:${querydslVer}@jar",
+        querydslApt: "com.mysema.querydsl:querydsl-apt:${querydslVer}@jar",
+        querydslJpa: "com.mysema.querydsl:querydsl-jpa:${querydslVer}@jar",
+        querydslSql: "com.mysema.querydsl:querydsl-sql:${querydslVer}@jar",
+
+        cdiApi: "javax.enterprise:cdi-api:${cdiVer}@jar",
+        elApi: "javax.el:el-api:${cdiVer}@jar",
+        cditestOwb: "org.apache.openwebbeans.test:cditest-owb:${cditestVer}@jar",
+        shiroWeb: "org.apache.shiro:shiro-web:${shiroVer}@jar",
+        dozer: "net.sf.dozer:dozer:${dozerVer}@jar",
+        seleniumJava: "org.seleniumhq.selenium:selenium-java:${seleniumVer}@jar",
+        seleniumRemoteDriver: "org.seleniumhq.selenium:selenium-remote-driver:${seleniumVer}@jar",
+        mockitoCore: "org.mockito:mockito-core:${mockitoVer}@jar",
+        powermockModule: "org.powermock:powermock-module-junit4:${powermockVer}@jar",
+        powermockApi: "org.powermock:powermock-api-mockito:${powermockVer}@jar",
+        jaxen: "jaxen:jaxen:${jaxenVer}@jar",
+        chardet: "com.googlecode.juniversalchardet:juniversalchardet:${chardetVer}@jar",
+        mchangeCommons: "com.mchange:mchange-commons-java:${mchangeCommonsVer}@jar"
+    ]
+}

@@ -1,0 +1,6 @@
+.idea
+.gradle
+build
+hadoop-sample.*
+hadoop/hadoop.iml
+hadoop/target

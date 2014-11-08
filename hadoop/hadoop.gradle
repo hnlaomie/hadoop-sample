@@ -1,0 +1,38 @@
+apply plugin: 'scala'
+
+// usage: gradle -i runHello
+/*
+task runHello(type: JavaExec, dependsOn: classes) {
+    main = 'HelloWorld'
+    classpath sourceSets.main.runtimeClasspath
+    classpath configurations.runtime
+}
+*/
+
+
+dependencies {
+    /* 测试用的junit */
+    testCompile libraries.hamcrestCore
+    testCompile libraries.junit
+    testCompile libraries.assertjCore
+    testCompile libraries.hadoopMinicluster
+
+    compile libraries.hadoopClient
+    /*
+    compile libraries.hadoopCommon
+    compile libraries.hadoopHdfs
+    compile libraries.hadoopMapreduceClientCore
+    compile libraries.hadoopMapreduceClientJobclient
+    */
+
+    compile libraries.hsqldb
+    compile libraries.slf4jApi
+    compile libraries.logbackClassic
+    compile libraries.logbackCore
+    compile libraries.guava14
+    compile libraries.scala10Compiler
+    compile libraries.scala10Reflect
+    compile libraries.scala10Library
+
+    compile fileTree(dir: "$sparkLibs", include: "spark-assembly-1.1.0-hadoop2.5.1.jar")
+}

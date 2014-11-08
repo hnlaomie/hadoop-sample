@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property>
+        <name>fs.default.name</name>
+        <value>file:///</value>
+    </property>
+    <property>
+        <name>mapred.job.tracker</name>
+        <value>local</value>
+    </property>
+    <property>
+        <name>mapreduce.output.fileoutputformat.compress</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hadoop.home.dir</name>
+        <value>/usr/local/tools/hadoop-single</value>
+    </property>
+    <property>
+        <name>hadoop.home.dir</name>
+        <value>/usr/local/tools/hadoop-single</value>
+    </property>
+</configuration>
+

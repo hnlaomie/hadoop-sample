@@ -1,0 +1,116 @@
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        mavenLocal()
+    }
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'idea'
+    //apply plugin: 'eclipse-wtp'
+}
+
+buildscript {
+    repositories {
+        maven {
+            name 'JFrog OSS snapshot repo'
+            url  'https://oss.jfrog.org/oss-snapshot-local/'
+        }
+        mavenCentral()
+        jcenter()
+	    mavenLocal()
+    }
+    dependencies {
+        classpath 'me.champeau.gradle:antlr4-gradle-plugin:0.1'
+    }
+}
+
+apply from: 'libraries.gradle'
+
+subprojects { subProject ->
+    
+    defaultTasks 'build'
+
+    group = 'com.github.laomie'
+    version = '0.1'
+
+    /* 编译编码为utf8的源码 */
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+    compileJava.options.define(compilerArgs: ["-proc:none", "-encoding", "UTF-8"])
+    compileTestJava.options.define(compilerArgs: ["-proc:none", "-encoding", "UTF-8"])
+    compileJava.options.compilerArgs << "-XDignore.symbol.file"
+
+    tasks.withType(GroovyCompile) {
+	    groovyOptions.encoding = "MacRoman"
+    }
+
+    task myJavadocs(type: Javadoc) {
+	    source = sourceSets.main.allJava
+    }
+
+    // minimize changes, at least for now (gradle uses 'build' by default)..
+    project.buildDir = "$projectBuildDir"
+
+    task copyDepLibs(type: Copy) {  
+        into "$buildDir/output/lib"  
+        from configurations.runtime  
+    }
+
+    uploadArchives {
+        repositories {
+           flatDir {
+               dirs 'repos'
+           }
+        }
+    }
+
+    if ( ! subProject.name.startsWith( 'release' )  && ! subProject.name.startsWith( 'documentation' ) ) {
+        configurations {
+            provided {
+            // todo : need to make sure these are non-exported
+            description = 'Non-exported compile-time dependencies.'
+            }
+            deployerJars {
+            description = 'Jars needed for doing deployment to JBoss Nexus repo'
+            }
+            configurations {
+            all*.exclude group: 'xml-apis', module: 'xml-apis'
+            }
+
+        }
+
+        test {
+            maxHeapSize = "1024m"
+        }
+
+        processTestResources.doLast( {
+            copy {
+            from( sourceSets.test.java.srcDirs ) {
+                include '**/*.properties'
+                include '**/*.xml'
+            }
+            into sourceSets.test.output.classesDir
+            }
+        } )
+
+        assemble.doLast( { install } )
+
+        targetCompatibility = "1.7"
+        sourceCompatibility = "1.7"
+
+        task sourcesJar(type: Jar, dependsOn: compileJava) {
+            from sourceSets.main.allSource
+            classifier = 'sources'
+        }
+
+        artifacts {
+            archives sourcesJar
+        }
+
+    }
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
