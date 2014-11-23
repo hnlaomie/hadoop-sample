@@ -35,6 +35,7 @@ public class WordCount {
 
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
+        System.out.println("coder");
         //conf.addResource("etc/hadoop/hadoop-local.xml");
         //conf.setBoolean("mapreduce.output.fileoutputformat.compress", true);
         //conf.setClass("mapreduce.output.fileoutputformat.compress.codec", GzipCodec.class, CompressionCodec.class);
