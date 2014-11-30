@@ -95,8 +95,8 @@ subprojects { subProject ->
 
         assemble.doLast( { install } )
 
-        targetCompatibility = "1.7"
-        sourceCompatibility = "1.7"
+        targetCompatibility = "1.8"
+        sourceCompatibility = "1.8"
 
         task sourcesJar(type: Jar, dependsOn: compileJava) {
             from sourceSets.main.allSource
@@ -112,5 +112,5 @@ subprojects { subProject ->
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.1'
+    gradleVersion = '2.2'
 }

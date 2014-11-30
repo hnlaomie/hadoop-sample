@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.laomie.mapreduce;
+package com.github.sample.mapreduce;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
