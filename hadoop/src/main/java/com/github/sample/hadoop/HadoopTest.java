@@ -9,12 +9,15 @@ package com.github.sample.hadoop;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.FsUrlStreamHandlerFactory;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URL;
 
 
 /**
@@ -30,22 +33,35 @@ import java.net.URI;
 public class HadoopTest {
 
     public static void main(String[] args) {
-        String uri = "hdfs://localhost:9000/user/lancer/data/test.txt";
+        String uri = "hdfs://localhost:9000/lancer/data/get-pip.py";
         String output = "hdfs://localhost:9000/user/lancer/data/output2";
+
+        readHadoop2(uri);
+    }
+
+    static void readHadoop(String uri) {
+        InputStream in = null;
+        Configuration configuration = new Configuration();
         try {
-            readHadoop(uri);
+            FileSystem fs = FileSystem.get(URI.create(uri), configuration);
+            in = fs.open(new Path(uri));
+            IOUtils.copyBytes(in, System.out, 4096, false);
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            IOUtils.closeStream(in);
         }
     }
 
-    static void readHadoop(String uri) throws IOException {
+    static void readHadoop2(String uri) {
+        // must be setting this config
+        URL.setURLStreamHandlerFactory(new FsUrlStreamHandlerFactory());
         InputStream in = null;
-        Configuration configuration = new Configuration();
-        FileSystem fs = FileSystem.get(URI.create(uri), configuration);
         try {
-            in = fs.open(new Path(uri));
+            in = new URL(uri).openStream();
             IOUtils.copyBytes(in, System.out, 4096, false);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
