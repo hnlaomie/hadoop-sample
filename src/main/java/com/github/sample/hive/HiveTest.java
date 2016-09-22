@@ -25,10 +25,11 @@ public class HiveTest {
         //String url = "jdbc:hive2://192.168.56.101:10000/default";
         //String url = "jdbc:hive2://192.168.56.101:21050/;auth=noSasl";
         // for hive 0.14 hiveserver
-        String driverName = "org.apache.hadoop.hive.jdbc.HiveDriver";
-        String url = "jdbc:hive://localhost:10000/hivetest";
+        String driverName = "org.apache.hive.jdbc.HiveDriver";
+        String url = "jdbc:hive2://localhost:10000/hivetest";
         Class.forName(driverName);
-        Connection conn = DriverManager.getConnection(url, "hive", "");
+        // laomie is hadoop user
+        Connection conn = DriverManager.getConnection(url, "laomie", "");
         return conn;
     }
 

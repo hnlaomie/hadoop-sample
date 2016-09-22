@@ -39,7 +39,7 @@ public class WordCount {
         //conf.addResource("etc/hadoop/hadoop-local.xml");
         //conf.setBoolean("mapreduce.output.fileoutputformat.compress", true);
         //conf.setClass("mapreduce.output.fileoutputformat.compress.codec", GzipCodec.class, CompressionCodec.class);
-        //conf.set("fs.default.name", "hdfs://127.0.0.1:9000");
+        conf.set("fs.default.name", "hdfs://127.0.0.1:9000");
         /*
           conf.set("fs.hdfs.impl",
             org.apache.hadoop.hdfs.DistributedFileSystem.class.getName()
