@@ -40,6 +40,16 @@ dependencies {
     compile libraries.scala11Library
     compile libraries.scala11Scalap
 
+    compile libraries.hadoopClient
+    compile libraries.hiveJdbc
+    compile libraries.hiveService
+    compile libraries.hiveExec
+    compile libraries.hiveMetastore
+    compile libraries.libfb303
+    compile libraries.libthrift
+
+    compile libraries.prestoJdbc
+
     compile libraries.sparkCore
     compile libraries.sparkSql
     compile libraries.sparkHive

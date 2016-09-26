@@ -14,9 +14,9 @@ import java.sql.*;
 public class HiveTest {
     public static void main(String[] args) throws Exception {
         HiveTest sample = new HiveTest();
-        //sample.createCountry();
+        sample.createCountry();
         //sample.createCity();
-        sample.select();
+        //sample.select();
     }
 
     private Connection getConnection() throws Exception {
@@ -26,7 +26,7 @@ public class HiveTest {
         //String url = "jdbc:hive2://192.168.56.101:21050/;auth=noSasl";
         // for hive 0.14 hiveserver
         String driverName = "org.apache.hive.jdbc.HiveDriver";
-        String url = "jdbc:hive2://localhost:10000/hivetest";
+        String url = "jdbc:hive2://localhost:10000/default";
         Class.forName(driverName);
         // laomie is hadoop user
         Connection conn = DriverManager.getConnection(url, "laomie", "");
