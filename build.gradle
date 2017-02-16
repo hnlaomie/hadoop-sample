@@ -20,6 +20,7 @@ apply from: 'libraries.gradle'
 
 //Get dependencies from Maven central repository
 repositories {
+    //maven{ url 'http://maven.oschina.net/content/groups/public/'}
     mavenCentral()
     jcenter()
     mavenLocal()
@@ -39,21 +40,16 @@ dependencies {
     compile libraries.scala11Reflect
     compile libraries.scala11Library
     compile libraries.scala11Scalap
+    compile libraries.config
+
+    //compile libraries.cassandraDriverCore
 
     compile libraries.hadoopClient
-    compile libraries.hiveJdbc
-    compile libraries.hiveService
-    compile libraries.hiveExec
-    compile libraries.hiveMetastore
-    compile libraries.libfb303
-    compile libraries.libthrift
-
-    compile libraries.prestoJdbc
+    compile libraries.hadoopWebProxy
 
     compile libraries.sparkCore
     compile libraries.sparkSql
     compile libraries.sparkHive
-    compile libraries.sparkCsv
     compile libraries.sparkRepl
     compile libraries.sparkMllib
     compile libraries.sparkYarn
